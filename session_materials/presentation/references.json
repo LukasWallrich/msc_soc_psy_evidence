@@ -1,0 +1,330 @@
+{
+  "baumeister1998": {
+    "authors": "Baumeister, R. F., Bratslavsky, E., Muraven, M., & Tice, D. M.",
+    "year": 1998,
+    "title": "Ego depletion: Is the active self a limited resource?",
+    "journal": "Journal of Personality and Social Psychology",
+    "volume": "74",
+    "issue": "5",
+    "pages": "1252-1265",
+    "doi": "10.1037/0022-3514.74.5.1252"
+  },
+  "serra-garcia2021": {
+    "authors": "Serra-Garcia, M., & Gneezy, U.",
+    "year": 2021,
+    "title": "Nonreplicable publications are cited more than replicable ones",
+    "journal": "Science Advances",
+    "volume": "7",
+    "issue": "21",
+    "doi": "10.1126/sciadv.abd1705"
+  },
+  "clark2023": {
+    "authors": "Clark, C. J., Connor, P., & Isch, C.",
+    "year": 2023,
+    "title": "Failing to replicate predicts citation declines in psychology",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "volume": "120",
+    "issue": "29",
+    "pages": "e2304862120",
+    "doi": "10.1073/pnas.2304862120"
+  },
+  "gordon2021": {
+    "authors": "Gordon, M., Viganola, D., Dreber, A., Johannesson, M., & Pfeiffer, T.",
+    "year": 2021,
+    "title": "Predicting replicability—Analysis of survey and prediction market data from large-scale forecasting projects",
+    "journal": "PLOS ONE",
+    "volume": "16",
+    "issue": "4",
+    "pages": "e0248780",
+    "doi": "10.1371/journal.pone.0248780"
+  },
+  "hardwicke2021": {
+    "authors": "Hardwicke, T. E., Thibault, R. T., Kosie, J. E., Wallach, J. D., Kidwell, M. C., & Ioannidis, J. P. A.",
+    "year": 2021,
+    "title": "Estimating the prevalence of transparency and reproducibility-related research practices in psychology (2014-2017)",
+    "journal": "Perspectives on Psychological Science",
+    "volume": "17",
+    "issue": "1",
+    "pages": "239-251",
+    "doi": "10.1177/1745691620979806"
+  },
+  "hagger2016": {
+    "authors": "Hagger, M. S., Chatzisarantis, N. L. D., Alberts, H., Anggono, C. O., Batailler, C., Birt, A. R., ... & Zwienenberg, M.",
+    "year": 2016,
+    "title": "A multilab preregistered replication of the ego-depletion effect",
+    "journal": "Perspectives on Psychological Science",
+    "volume": "11",
+    "issue": "4",
+    "pages": "546-573",
+    "doi": "10.1177/1745691616652873"
+  },
+  "bargh1996": {
+    "authors": "Bargh, J. A., Chen, M., & Burrows, L.",
+    "year": 1996,
+    "title": "Automaticity of social behavior: Direct effects of trait construct and stereotype activation on action",
+    "journal": "Journal of Personality and Social Psychology",
+    "volume": "71",
+    "issue": "2",
+    "pages": "230-244",
+    "doi": "10.1037/0022-3514.71.2.230"
+  },
+  "doyen2012": {
+    "authors": "Doyen, S., Klein, O., Pichon, C. L., & Cleeremans, A.",
+    "year": 2012,
+    "title": "Behavioral priming: It's all in the mind, but whose mind?",
+    "journal": "PLOS ONE",
+    "volume": "7",
+    "issue": "1",
+    "doi": "10.1371/journal.pone.0029081"
+  },
+  "simmons2011": {
+    "authors": "Simmons, J. P., Nelson, L. D., & Simonsohn, U.",
+    "year": 2011,
+    "title": "False-positive psychology: Undisclosed flexibility in data collection and analysis allows presenting anything as significant",
+    "journal": "Psychological Science",
+    "volume": "22",
+    "issue": "11",
+    "pages": "1359-1366",
+    "doi": "10.1177/0956797611417632"
+  },
+  "bond1996": {
+    "authors": "Bond, R., & Smith, P. B.",
+    "year": 1996,
+    "title": "Culture and conformity: A meta-analysis of studies using Asch's (1952b, 1956) line judgment task",
+    "journal": "Psychological Bulletin",
+    "volume": "119",
+    "issue": "1",
+    "pages": "111-137",
+    "doi": "10.1037/0033-2909.119.1.111"
+  },
+  "henrich2010": {
+    "authors": "Henrich, J., Heine, S. J., & Norenzayan, A.",
+    "year": 2010,
+    "title": "The weirdest people in the world?",
+    "journal": "Behavioral and Brain Sciences",
+    "volume": "33",
+    "issue": "2-3",
+    "pages": "61-83",
+    "doi": "10.1017/S0140525X0999152X"
+  },
+  "jack2012": {
+    "authors": "Jack, R. E., Garrod, O. G., Yu, H., Caldara, R., & Schyns, P. G.",
+    "year": 2012,
+    "title": "Facial expressions of emotion are not culturally universal",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "volume": "109",
+    "issue": "19",
+    "pages": "7241-7244",
+    "doi": "10.1073/pnas.1200155109"
+  },
+  "heine1999": {
+    "authors": "Heine, S. J., Lehman, D. R., Markus, H. R., & Kitayama, S.",
+    "year": 1999,
+    "title": "Is there a universal need for positive self-regard?",
+    "journal": "Psychological Review",
+    "volume": "106",
+    "issue": "4",
+    "pages": "766-794",
+    "doi": "10.1037/0033-295X.106.4.766"
+  },
+  "osc2015": {
+    "authors": "Open Science Collaboration",
+    "year": 2015,
+    "title": "Estimating the reproducibility of psychological science",
+    "journal": "Science",
+    "volume": "349",
+    "issue": "6251",
+    "doi": "10.1126/science.aac4716"
+  },
+  "klein2018": {
+    "authors": "Klein, R. A., Vianello, M., Hasselman, F., Adams, B. G., Adams, R. B., Alber, S., ... & Nosek, B. A.",
+    "year": 2018,
+    "title": "Many Labs 2: Investigating variation in replicability across samples and settings",
+    "journal": "Advances in Methods and Practices in Psychological Science",
+    "volume": "1",
+    "issue": "4",
+    "pages": "443-490",
+    "doi": "10.1177/2515245918810225"
+  },
+  "mousa2020": {
+    "authors": "Mousa, S.",
+    "year": 2020,
+    "title": "Building social cohesion between Christians and Muslims through soccer in post-ISIS Iraq",
+    "journal": "Science",
+    "volume": "369",
+    "issue": "6505",
+    "pages": "866-870",
+    "doi": "10.1126/science.abb3153"
+  },
+  "paluck2018": {
+    "authors": "Paluck, E. L., Green, S. A., & Green, D. P.",
+    "year": 2018,
+    "title": "The contact hypothesis re-evaluated",
+    "journal": "Behavioural Public Policy",
+    "volume": "3",
+    "issue": "2",
+    "pages": "129-158",
+    "doi": "10.1017/bpp.2018.25"
+  },
+  "paluck2021": {
+    "authors": "Paluck, E. L., Porat, R., Clark, C. S., & Green, D. P.",
+    "year": 2021,
+    "title": "Prejudice reduction: Progress and challenges",
+    "journal": "Annual Review of Psychology",
+    "volume": "72",
+    "pages": "533-560",
+    "doi": "10.1146/annurev-psych-071620-030619"
+  },
+  "korbmacher2023": {
+    "authors": "Korbmacher, M., Azevedo, F., Pennington, C. R., Hartmann, H., Pownall, M., Schmidt, K., ... & Evans, T. R.",
+    "year": 2023,
+    "title": "The replication crisis has led to positive structural, procedural, and community changes",
+    "journal": "Communications Psychology",
+    "volume": "1",
+    "issue": "3",
+    "doi": "10.1038/s44271-023-00003-2"
+  },
+  "verschuere2018": {
+    "authors": "Verschuere, B., Meijer, E. H., Jim, A., Hoogesteyn, K., Orthey, R., McCarthy, R. J., ... & Yildiz, E.",
+    "year": 2018,
+    "title": "Registered replication report on Mazar, Amir, and Ariely (2008)",
+    "journal": "Advances in Methods and Practices in Psychological Science",
+    "volume": "1",
+    "issue": "3",
+    "pages": "299-317",
+    "doi": "10.1177/2515245918781032"
+  },
+  "deci1999": {
+    "authors": "Deci, E. L., Koestner, R., & Ryan, R. M.",
+    "year": 1999,
+    "title": "A meta-analytic review of experiments examining the effects of extrinsic rewards on intrinsic motivation",
+    "journal": "Psychological Bulletin",
+    "volume": "125",
+    "issue": "6",
+    "pages": "627-668",
+    "doi": "10.1037/0033-2909.125.6.627"
+  },
+  "gollwitzer2006": {
+    "authors": "Gollwitzer, P. M., & Sheeran, P.",
+    "year": 2006,
+    "title": "Implementation intentions and goal achievement: A meta-analysis of effects and processes",
+    "journal": "Advances in Experimental Social Psychology",
+    "volume": "38",
+    "pages": "69-119",
+    "doi": "10.1016/S0065-2601(06)38002-1"
+  },
+  "oswald2013": {
+    "authors": "Oswald, F. L., Mitchell, G., Blanton, H., Jaccard, J., & Tetlock, P. E.",
+    "year": 2013,
+    "title": "Predicting ethnic and racial discrimination: A meta-analysis of IAT criterion studies",
+    "journal": "Journal of Personality and Social Psychology",
+    "volume": "105",
+    "issue": "2",
+    "pages": "171-192",
+    "doi": "10.1037/a0032734"
+  },
+  "neerdaels2024": {
+    "authors": "Neerdaels, J., Teymoori, A., Tröster, C., & Van Quaquebeke, N.",
+    "year": 2024,
+    "title": "When lack of control leads to uncertainty: Explaining the effect of anomie on support for authoritarianism",
+    "journal": "Journal of Personality and Social Psychology",
+    "volume": "130",
+    "issue": "1",
+    "pages": "57-76",
+    "doi": "10.1037/pspi0000483"
+  },
+  "pettigrew2006": {
+    "authors": "Pettigrew, T. F., & Tropp, L. R.",
+    "year": 2006,
+    "title": "A meta-analytic test of intergroup contact theory",
+    "journal": "Journal of Personality and Social Psychology",
+    "volume": "90",
+    "issue": "5",
+    "pages": "751-783",
+    "doi": "10.1037/0022-3514.90.5.751"
+  },
+  "lowe2025": {
+    "authors": "Lowe, M.",
+    "year": 2025,
+    "title": "Has intergroup contact delivered?",
+    "journal": "Annual Review of Economics",
+    "volume": "17",
+    "pages": "321-344",
+    "doi": "10.1146/annurev-economics-081324-091109"
+  },
+  "vezzali2015": {
+    "authors": "Vezzali, L., Stathi, S., Crisp, R. J., & Capozza, D.",
+    "year": 2015,
+    "title": "Comparing direct and imagined intergroup contact among children: Effects on outgroup stereotypes and helping intentions",
+    "journal": "International Journal of Intercultural Relations",
+    "volume": "49",
+    "pages": "46-53",
+    "doi": "10.1016/j.ijintrel.2015.06.009"
+  },
+  "forscher2019": {
+    "authors": "Forscher, P. S., Lai, C. K., Axt, J. R., Ebersole, C. R., Herman, M., Devine, P. G., & Nosek, B. A.",
+    "year": 2019,
+    "title": "A meta-analysis of procedures to change implicit measures",
+    "journal": "Journal of Personality and Social Psychology",
+    "volume": "117",
+    "issue": "3",
+    "pages": "522-559",
+    "doi": "10.1037/pspa0000160"
+  },
+  "sisk2018": {
+    "authors": "Sisk, V. F., Burgoyne, A. P., Sun, J., Butler, J. L., & Macnamara, B. N.",
+    "year": 2018,
+    "title": "To what extent and under which circumstances are growth mind-sets important to academic achievement? Two meta-analyses",
+    "journal": "Psychological Science",
+    "volume": "29",
+    "issue": "4",
+    "pages": "549-571",
+    "doi": "10.1177/0956797617739704"
+  },
+  "yeager2019": {
+    "authors": "Yeager, D. S., Hanselman, P., Walton, G. M., Murray, J. S., Crosnoe, R., Muller, C., ... & Dweck, C. S.",
+    "year": 2019,
+    "title": "A national experiment reveals where a growth mindset improves achievement",
+    "journal": "Nature",
+    "volume": "573",
+    "pages": "364-369",
+    "doi": "10.1038/s41586-019-1466-y"
+  },
+  "carney2010": {
+    "authors": "Carney, D. R., Cuddy, A. J. C., & Yap, A. J.",
+    "year": 2010,
+    "title": "Power posing: Brief nonverbal displays affect neuroendocrine levels and risk tolerance",
+    "journal": "Psychological Science",
+    "volume": "21",
+    "issue": "10",
+    "pages": "1363-1368",
+    "doi": "10.1177/0956797610383437"
+  },
+  "ranehill2015": {
+    "authors": "Ranehill, E., Dreber, A., Johannesson, M., Leiberg, S., Sul, S., & Weber, R. A.",
+    "year": 2015,
+    "title": "Assessing the robustness of power posing: No effect on hormones and risk tolerance in a large sample of men and women",
+    "journal": "Psychological Science",
+    "volume": "26",
+    "issue": "5",
+    "pages": "653-656",
+    "doi": "10.1177/0956797614553946"
+  },
+  "kramer2014": {
+    "authors": "Kramer, A. D. I., Guillory, J. E., & Hancock, J. T.",
+    "year": 2014,
+    "title": "Experimental evidence of massive-scale emotional contagion through social networks",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "volume": "111",
+    "issue": "24",
+    "pages": "8788-8790",
+    "doi": "10.1073/pnas.1320040111"
+  },
+  "dweck2006": {
+    "authors": "Dweck, C. S.",
+    "year": 2006,
+    "title": "Mindset: The new psychology of success",
+    "publisher": "Random House",
+    "url": "https://www.penguinrandomhouse.com/books/44330/mindset-by-carol-s-dweck-phd/"
+  }
+}
