@@ -136,7 +136,7 @@
       return refA.year - refB.year;
     });
 
-    const REFS_PER_PAGE = 10;
+    const REFS_PER_PAGE = 8;
     const totalPages = Math.ceil(sortedKeys.length / REFS_PER_PAGE);
 
     // Get the parent section element
