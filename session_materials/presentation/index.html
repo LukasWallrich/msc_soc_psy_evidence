@@ -71,10 +71,11 @@
 </head>
 <body>
     <div class="reveal">
+        <img src="images/cc-by.svg" alt="CC-BY" id="cc-logo" style="position: absolute; top: 10px; left: 10px; height: 45px; z-index: 100; display: none;">
         <div class="slides">
 
             <!-- ============ TITLE ============ -->
-            <section class="center" data-background-image="images/background.jpg">
+            <section class="center" data-background-image="images/background.jpg" data-state="show-cc">
                 <div style="background: rgba(255,255,255,0.8); padding: 1em 1.5em; border-radius: 8px; display: inline-block;">
                     <h1>From Lab to Life</h1>
                     <p style="font-size: 1.1em; color: #666;">Replicability, Applicability, and Generalisation<br>in Social Psychology</p>
@@ -1038,7 +1039,7 @@
                 <p style="font-size: 1.3em; margin-top: 1.5em; color: #2c3e50;"><strong>Let's use and produce evidence with care &mdash; so that our science deserves trust.</strong></p>
             </section>
 
-            <section class="center" data-background-image="images/background.jpg">
+            <section class="center" data-background-image="images/background.jpg" data-state="show-cc">
                 <div style="background: rgba(255,255,255,0.7); padding: 1em 1.5em; border-radius: 8px; display: inline-block;">
                     <h2>Thank You</h2>
                     <p style="font-size: 1.3em; margin-top: 0.5em;">Questions?</p>
@@ -1071,6 +1072,14 @@
             height: 720,
             margin: 0.1,
         });
+
+        // Show CC logo on specific slides
+        const ccLogo = document.getElementById('cc-logo');
+        function updateCCLogo(slide) {
+            ccLogo.style.display = slide?.dataset?.state === 'show-cc' ? 'block' : 'none';
+        }
+        Reveal.on('slidechanged', event => updateCCLogo(event.currentSlide));
+        Reveal.on('ready', event => updateCCLogo(event.currentSlide));
     </script>
 </body>
 </html>
