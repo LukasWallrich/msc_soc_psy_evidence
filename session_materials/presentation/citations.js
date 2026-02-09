@@ -51,7 +51,7 @@
       }
     }
 
-    return `${shortAuthors}, ${ref.year}`;
+    return `${shortAuthors} (${ref.year})`;
   }
 
   // Format a full bibliography entry
@@ -102,6 +102,9 @@
       // If no text content, auto-fill with short citation
       if (!cite.textContent.trim()) {
         cite.textContent = formatShortCite(ref);
+      } else {
+        // Normalise "Name, Year" to "Name (Year)" in explicit text
+        cite.textContent = cite.textContent.replace(/,\s*(\d{4})\b/, ' ($1)');
       }
 
       // Wrap in link to DOI

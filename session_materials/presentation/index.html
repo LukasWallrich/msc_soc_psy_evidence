@@ -61,6 +61,18 @@
         .reveal .solution-list { background: #e8f5e9; padding: 1em; border-radius: 5px; }
         .reveal img { max-height: 450px; }
         .reveal .small { font-size: 0.7em; }
+        /* Click-to-zoom lightbox */
+        .img-zoom-overlay {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.85); z-index: 9999;
+            display: flex; align-items: center; justify-content: center;
+            cursor: zoom-out;
+        }
+        .img-zoom-overlay img {
+            max-width: 95vw; max-height: 95vh; object-fit: contain;
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+        }
+        .reveal .slides img:not(#cc-logo) { cursor: zoom-in; }
         .reveal .footnote { font-size: 0.5em; color: #666; position: absolute; bottom: 1em; }
         .break-slide {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
@@ -125,12 +137,11 @@
                 <p>When evaluating research, ask:</p>
                 <table>
                     <tr><th>Question</th><th>What it means</th></tr>
-                    <tr><td style="color: #888;">[0. <strong>Reproducibility</strong>]</td><td style="color: #888;">Same data + same code &rarr; same results (baseline for trust)</td></tr>
-                    <tr><td><strong class="blue">1. Replicability</strong></td><td>Does this hold up when repeated?</td></tr>
-                    <tr><td><strong class="red">2. Generalisation</strong></td><td>Does this apply beyond the original sample?</td></tr>
-                    <tr><td><strong class="green">3. Applicability</strong></td><td>Does this matter in the real world?</td></tr>
+                    <tr class="fragment"><td style="color: #888;">[0. <strong>Reproducibility</strong>]</td><td style="color: #888;">Same data + same code &rarr; same results (baseline for trust)</td></tr>
+                    <tr class="fragment"><td><strong class="blue">1. Replicability</strong></td><td>Does this hold up when repeated?</td></tr>
+                    <tr class="fragment"><td><strong class="red">2. Generalisation</strong></td><td>Does this apply beyond the original sample?</td></tr>
+                    <tr class="fragment"><td><strong class="green">3. Applicability</strong></td><td>Does this matter in the real world?</td></tr>
                 </table>
-                <p style="margin-top: 1em;" class="small">Reproducibility is the baseline for trust &mdash; but our focus today is on the three questions that matter once we trust the numbers.</p>
             </section>
 
             <section>
@@ -138,10 +149,10 @@
                 <p>A finding can:</p>
                 <ul>
                     <li><strong class="blue">Replicate perfectly</strong> in labs</li>
-                    <li>AND still be <strong class="red">trivial</strong> for real-world prediction</li>
-                    <li>AND only work with <strong class="red">specific populations</strong></li>
+                    <li class="fragment">AND still be <strong class="red">trivial</strong> for real-world prediction</li>
+                    <li class="fragment">AND only work with <strong class="red">specific populations</strong></li>
                 </ul>
-                <p style="margin-top: 1.5em; font-size: 1.1em;"><strong>All three matter. They're different.</strong></p>
+                <p class="fragment" style="margin-top: 1.5em; font-size: 1.1em;"><strong>All three matter. They're different.</strong></p>
             </section>
 
             <section class="discussion-slide">
@@ -155,7 +166,7 @@
                 <h2>Today's Roadmap</h2>
                 <ol>
                     <li><strong class="blue">Replicability (+ reproducibility)</strong> &mdash; Why self-correction fails, and how to fix it</li>
-                    <li><strong>Generalisation</strong> &mdash; Beyond WEIRD (deeper than you've heard)</li>
+                    <li><strong>Generalisation</strong> &mdash; Beyond WEIRD</li>
                     <li><strong class="green">Applicability</strong> &mdash; Lab to life (why effects shrink)</li>
                     <li><strong>Becoming a Critical Reader</strong> &mdash; Practical evaluation skills</li>
                     <li><strong>The Way Forward</strong> &mdash; Open Science and your role</li>
@@ -181,7 +192,7 @@
                 <div style="text-align: center;">
                     <img src="images/qrp-04.png" alt="OSC 2015 Replication Results" style="max-height: 350px;">
                 </div>
-                <p class="small" style="margin-top: 0.5em;"><strong>But did this change citations?</strong> Nonreplicable papers continued to be cited <em>more</em> than replicable ones (<cite key="serra-garcia2021">Serra-Garcia & Gneezy, 2021</cite>). Failed replications predict citation declines of at most ~14% (<cite key="clark2023">Clark et al., 2023</cite>).</p>
+                <p class="fragment small" style="margin-top: 0.5em;"><strong>But did this change citations?</strong><br /> Nonreplicable papers continued to be cited <em>more</em> than replicable ones (<cite key="serra-garcia2021">Serra-Garcia & Gneezy, 2021</cite>). <br />Failed replications predict citation declines of at most ~14% (<cite key="clark2023">Clark et al., 2023</cite>).</p>
             </section>
 
             <section>
@@ -189,7 +200,7 @@
                 <div style="text-align: center;">
                     <img src="images/qrp-08.png" alt="Expert estimates across fields" style="max-height: 380px;">
                 </div>
-                <p class="small" style="text-align: center; margin-top: 0.5em;">Experts estimated what % of findings would replicate in each field. Psychology (and education) ranked lowest. (<cite key="gordon2021">Gordon et al., 2021</cite>)</p>
+                <p class="small" style="text-align: center; margin-top: 0.5em;">Experts estimated what % of findings would replicate in each field.<br /> Psychology (and education) ranked lowest. (<cite key="gordon2021">Gordon et al., 2021</cite>)</p>
             </section>
 
             <section>
@@ -199,10 +210,10 @@
                         <p><strong>Roy Baumeister's "ego depletion" (<cite key="baumeister1998"></cite>):</strong><br>
                         Willpower is a limited resource that depletes with use</p>
 
-                        <p style="margin-top: 1em;"><strong>Large pre-registered replication (<cite key="hagger2016">Hagger et al., 2016</cite>):</strong><br>
+                        <p class="fragment" style="margin-top: 1em;"><strong>Large pre-registered replication (<cite key="hagger2016">Hagger et al., 2016</cite>):</strong><br>
                         d = 0.04 (effectively zero)</p>
 
-                        <p style="margin-top: 1em;"><strong>Current status:</strong><br>
+                        <p class="fragment" style="margin-top: 1em;"><strong>Current status:</strong><br>
                         <span class="red">Still in textbooks. Still cited approvingly.</span></p>
                     </div>
                     <div style="text-align: center;">
@@ -217,10 +228,10 @@
                 <p><strong>John Bargh's "elderly priming" (<cite key="bargh1996">Bargh et al., 1996</cite>):</strong><br>
                 Thinking about elderly people makes you walk slower</p>
 
-                <p style="margin-top: 1em;"><strong>Replication attempts:</strong><br>
+                <p class="fragment" style="margin-top: 1em;"><strong>Replication attempts:</strong><br>
                 Multiple failures to replicate (<cite key="doyen2012">Doyen et al., 2012</cite>)</p>
 
-                <p style="margin-top: 1em;"><strong>Current status:</strong><br>
+                <p class="fragment" style="margin-top: 1em;"><strong>Current status:</strong><br>
                 Original paper: <span class="red">nearly 7,000 citations</span>. Failures: far fewer.</p>
             </section>
 
@@ -228,10 +239,10 @@
                 <h2>Why No Self-Correction?</h2>
                 <ul>
                     <li><strong>Replications are rare:</strong> Only ~5% of psychology papers are replications (<cite key="hardwicke2021"></cite>)</li>
-                    <li>Textbooks slow to change</li>
-                    <li>Easier to cite exciting original than boring failure</li>
-                    <li>Journals don't reward publishing replications</li>
-                    <li><strong>Discoverability:</strong> Search engines rank by relevance (i.e., citations); replications aren't linked to originals
+                    <li class="fragment">Textbooks slow to change</li>
+                    <li class="fragment">Easier to cite exciting original than boring failure</li>
+                    <li class="fragment">Journals don't reward publishing replications</li>
+                    <li class="fragment"><strong>Discoverability:</strong> Search engines rank by relevance (i.e., citations); replications aren't linked to originals
                         <br><span class="small">Addressing this: <a href="https://forrt.org/marco/">Making Replications Count (MARCO)</a> &mdash; UKRI-funded project</span></li>
                 </ul>
             </section>
@@ -257,24 +268,24 @@
             <section>
                 <h2>Classic Example: "False Positive Psychology"</h2>
                 <p><cite key="simmons2011">Simmons et al., 2011</cite> demonstrated they could "prove" that:</p>
-                <blockquote style="font-size: 1.2em; margin: 1em 0;">
+                <blockquote class="fragment" style="font-size: 1.2em; margin: 1em 0;">
                     <strong>Listening to "When I'm Sixty-Four" (The Beatles) makes you younger</strong>
                 </blockquote>
                 <ul>
-                    <li>The finding was <strong>statistically significant</strong> (p &lt; .05)</li>
-                    <li>They used <strong class="red">no fabrication</strong> &mdash; only standard analytic practices</li>
-                    <li>Published in <em>Psychological Science</em> to demonstrate the problem</li>
+                    <li class="fragment">The finding was <strong>statistically significant</strong> (p &lt; .05)</li>
+                    <li class="fragment">They used <strong class="red">no fabrication</strong> &mdash; only standard analytic practices</li>
+                    <li class="fragment">Published in <em>Psychological Science</em> to demonstrate the problem</li>
                 </ul>
             </section>
 
             <section>
                 <h2>How Did They Do It?</h2>
                 <ul>
-                    <li>Include unreported conditions (3 songs)</li>
-                    <li>Include many potential dependent variables</li>
-                    <li>Include many potential control variables</li>
-                    <li>Check for statistical significance after every 10 participants</li>
-                    <li>Selectively use control variables</li>
+                    <li class="fragment">Include unreported conditions (3 songs)</li>
+                    <li class="fragment">Include many potential dependent variables</li>
+                    <li class="fragment">Include many potential control variables</li>
+                    <li class="fragment">Check for statistical significance after every 10 participants</li>
+                    <li class="fragment">Selectively use control variables</li>
                 </ul>
                 <p style="margin-top: 1em;"><strong>No <em>fabrication</em> of any data or statistical <em>mistakes</em></strong></p>
                 <p class="small">All common practices (back then) &mdash; no outright fraud required</p>
@@ -282,16 +293,17 @@
 
             <section>
                 <h2>Even a Monkey with a Typewriter</h2>
-                <div class="two-column" style="gap: 1em;">
-                    <div style="flex: 1; text-align: center;">
-                        <a href="https://xkcd.com/882"><img src="images/qrp-14.png" alt="xkcd: Significant" style="max-height: 350px;"></a>
-                        <p class="small"><a href="https://xkcd.com/882">xkcd.com/882</a></p>
-                    </div>
-                    <div style="flex: 2; text-align: center;">
-                        <p><strong>Try it yourself:</strong></p>
-                        <a href="https://stats.andrewheiss.com/hack-your-way/"><img src="images/p-hacking-simulator.png" alt="P-Hacking Simulator" style="max-height: 320px;"></a>
-                        <p class="small"><a href="https://stats.andrewheiss.com/hack-your-way/">stats.andrewheiss.com/hack-your-way/</a></p>
-                    </div>
+                <div style="text-align: center;">
+                    <img src="images/qrp-14.png" alt="xkcd: Significant" style="max-height: 480px;">
+                    <p class="small"><a href="https://xkcd.com/882">xkcd.com/882</a></p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Try It Yourself</h2>
+                <div style="text-align: center;">
+                    <img src="images/p-hacking-simulator.png" alt="P-Hacking Simulator" style="max-height: 400px;">
+                    <p class="small"><a href="https://stats.andrewheiss.com/hack-your-way/">stats.andrewheiss.com/hack-your-way/</a></p>
                 </div>
             </section>
 
@@ -306,36 +318,32 @@
 
             <section>
                 <h2>Registered Reports</h2>
-                <div class="two-column">
-                    <div>
-                        <p><strong>Traditional process:</strong></p>
-                        <p style="font-size: 0.8em;">Do study &rarr; Analyse &rarr; Write &rarr; Submit &rarr; Review &rarr; Maybe publish</p>
+                <p><strong>Traditional process:</strong></p>
+                <p style="font-size: 0.85em;">Do study &rarr; Analyse &rarr; Write &rarr; Submit &rarr; Review &rarr; Maybe publish</p>
 
-                        <p style="margin-top: 1.5em;"><strong>Registered Reports:</strong></p>
-                        <p style="font-size: 0.8em;">Write intro + methods &rarr; Submit &rarr; Review &rarr; <strong class="green">Commit to publish</strong> &rarr; Do study &rarr; Analyse &rarr; Publish</p>
-                    </div>
-                    <div style="text-align: center;">
-                        <img src="images/rr-process.png" alt="Registered Reports process: Stage 1 peer review after design, Stage 2 after analysis" style="max-height: 300px;">
-                        <p style="margin-top: 0.5em;"><em>In-principle acceptance regardless of results (if you follow the approved protocol).</em></p>
-                    </div>
+                <div class="fragment">
+                    <p style="margin-top: 1.5em;"><strong>Registered Reports:</strong></p>
+                    <p style="font-size: 0.85em;">Write intro + methods &rarr; Submit &rarr; Review &rarr; <strong class="green">Commit to publish</strong> &rarr; Do study &rarr; Analyse &rarr; Publish</p>
                 </div>
+
+                <p class="fragment" style="margin-top: 1.5em;"><em>In-principle acceptance regardless of results (if you follow the approved protocol).</em></p>
             </section>
 
             <section class="center">
                 <h2 style="color: #34495e;">But is replication enough?</h2>
-                <p style="font-size: 1.1em; margin-top: 1em; color: #2c3e50;">Even if we fix these problems...</p>
-                <p style="font-size: 1.1em; color: #2c3e50;">...a study that <strong class="blue">replicates</strong> isn't necessarily one that <strong class="red">generalises</strong> or <strong class="green">applies</strong>.</p>
+                <p class="fragment" style="font-size: 1.1em; margin-top: 1em; color: #2c3e50;">Even if we fix these problems...</p>
+                <p class="fragment" style="font-size: 1.1em; color: #2c3e50;">...a study that <strong class="blue">replicates</strong> isn't necessarily one that <br /> <strong class="red">generalises</strong> or <strong class="green">applies</strong>.</p>
             </section>
 
             <section class="center">
                 <p style="font-size: 1.1em;">A study of 100 US undergrads that replicates with 100 more US undergrads...</p>
                 <p style="font-size: 1.1em;">...has told us it's <strong>replicable with that population</strong>.</p>
-                <p style="font-size: 1.3em; margin-top: 1em; color: #e74c3c;">It hasn't told us it's <strong>true about humans</strong>.</p>
+                <p class="fragment" style="font-size: 1.3em; margin-top: 1em; color: #e74c3c;">It hasn't told us it's <strong>true about humans</strong>.</p>
             </section>
 
             <section class="discussion-slide">
                 <h3>Trio Discussion (4 min)</h3>
-                <p style="font-size: 1.1em;">Think of one finding from your lectures so far.</p>
+                <p style="font-size: 1.1em;">Think of one (surprising) finding from your lectures so far.</p>
                 <p style="font-size: 1.1em; margin-top: 1em;">If it replicated in a different lab with similar participants, would that increase your confidence it's "true"?</p>
                 <p style="font-size: 1.1em; margin-top: 1em;"><strong>Why or why not?</strong></p>
             </section>
@@ -353,9 +361,9 @@
                 <h2>What You Already Know</h2>
                 <ul>
                     <li>The "WEIRD" sampling problem (<cite key="henrich2010">Henrich et al., 2010</cite>): 96% of samples from Western industrialised countries</li>
-                    <li><strong>That matters (sometimes):</strong> <cite key="bond1996">Bond & Smith, 1996</cite> found conformity higher in collectivist cultures</li>
+                    <li class="fragment"><strong>That matters (sometimes):</strong> <cite key="bond1996">Bond & Smith, 1996</cite> found conformity higher in collectivist cultures</li>
                 </ul>
-                <p style="margin-top: 1.5em; font-size: 1.2em;"><strong>Let's go deeper.</strong></p>
+                <p class="fragment" style="margin-top: 1.5em; font-size: 1.2em;"><strong>Let's go deeper.</strong></p>
             </section>
 
             <section>
@@ -363,7 +371,7 @@
                 <p><strong>The "universal" finding:</strong></p>
                 <p>Self-serving bias &mdash; we take credit for successes, blame failures on circumstances</p>
                 <p style="margin-top: 1em; color: #666;"><em>In every intro psych textbook.</em></p>
-                <p style="margin-top: 1em;"><strong><cite key="heine1999">Heine et al., 1999</cite></strong> studied this cross-culturally...</p>
+                <p class="fragment" style="margin-top: 1em;"><strong><cite key="heine1999">Heine et al., 1999</cite></strong> studied this cross-culturally...</p>
             </section>
 
             <section class="poll-slide">
@@ -377,19 +385,32 @@
             </section>
 
             <section>
-                <h2>The Answer: Self-Serving Bias Reverses</h2>
+                <h2>The Answer</h2>
                 <p><strong><cite key="heine1999">Heine et al., 1999</cite>:</strong></p>
                 <div class="two-column" style="margin-top: 0.5em;">
                     <div style="background: #e8f5e9; padding: 1em; border-radius: 5px;">
                         <p><strong>Western samples:</strong></p>
                         <p>Self-enhancing<br>(take credit for success)</p>
                     </div>
-                    <div style="background: #ffebee; padding: 1em; border-radius: 5px;">
+                    <div class="fragment" style="background: #ffebee; padding: 1em; border-radius: 5px;">
                         <p><strong>Japanese samples:</strong></p>
                         <p>Self-critical<br>(take more responsibility for failures)</p>
                     </div>
                 </div>
-                <p style="margin-top: 1em; font-size: 1.2em; text-align: center;"><strong class="red">Not smaller. Opposite direction.</strong></p>
+                <p class="fragment" style="margin-top: 1em; font-size: 1.2em; text-align: center;"><strong class="red">Not smaller. Opposite direction.</strong></p>
+            </section>
+
+            <section>
+                <h2>What This Means for Theory</h2>
+                <p>Theories built on "universal" self-enhancement:</p>
+                <ul>
+                    <li>Often invoke evolutionary explanations</li>
+                    <li>"It's adaptive to see yourself positively"</li>
+                </ul>
+
+                <p class="fragment" style="margin-top: 1.5em;">If half the world shows the opposite pattern...</p>
+
+                <p class="fragment" style="font-size: 1.3em; color: #e74c3c; margin-top: 0.5em;"><strong>...that theory is wrong.</strong></p>
             </section>
 
             <section>
@@ -418,8 +439,8 @@
                     <blockquote style="margin: 0;">"Is this face showing anger, fear, or disgust?"</blockquote>
                     <blockquote style="margin: 0;">"What is this person feeling?"</blockquote>
                 </div>
-                <p style="margin-top: 0.5em;">When you give people the categories, they'll use them &mdash; even if they wouldn't naturally think that way.</p>
-                <p style="margin-top: 0.5em;"><strong><cite key="jack2012">Jack et al., 2012</cite></strong> tested this using <strong>data-driven methods</strong>: participants adjusted computerised faces to show each emotion, revealing their internal mental representations without being constrained to Ekman's categories.</p>
+                <p class="fragment" style="margin-top: 0.5em;">When you give people the categories, they'll use them &mdash; even if they wouldn't naturally think that way.</p>
+                <p class="fragment" style="margin-top: 0.5em;"><strong><cite key="jack2012">Jack et al., 2012</cite></strong> tested this using <strong>data-driven methods</strong>: participants adjusted computerised faces to show each emotion, revealing their internal mental representations without being constrained to Ekman's categories.</p>
             </section>
 
             <section class="poll-slide">
@@ -427,8 +448,8 @@
                 <p>What do you think Jack et al. found with East Asian participants?</p>
                 <ol style="padding-left: 1.5em; font-size: 1.1em;">
                     <li>Same pattern as Western participants</li>
-                    <li>No effect</li>
-                    <li>Different pattern entirely</li>
+                                            <li>Different pattern entirely <br /><em>What might that look like?</em></li>
+                    </li>
                 </ol>
             </section>
 
@@ -451,20 +472,20 @@
                         </ul>
                     </div>
                 </div>
-                <p style="margin-top: 0.5em; font-size: 1.1em;">Not "smaller effect" &mdash; <strong class="red">qualitatively different categorisation</strong></p>
+                <p class="fragment" style="margin-top: 0.5em; font-size: 1.1em;">Not "smaller effect" &mdash; <strong class="red">qualitatively different categorisation</strong></p>
             </section>
 
             <section>
-                <h2>What This Means for Theory</h2>
-                <p>Theories built on "universal" self-enhancement:</p>
+                <h2>What This Means for Practice</h2>
+                <p>Ekman's categories are embedded in real-world technology:</p>
                 <ul>
-                    <li>Often invoke evolutionary explanations</li>
-                    <li>"It's adaptive to see yourself positively"</li>
+                    <li>AI emotion recognition systems trained on his six categories</li>
+                    <li>Used in hiring, security screening, education</li>
                 </ul>
 
-                <p style="margin-top: 1.5em;">If half the world shows the opposite pattern...</p>
+                <p class="fragment" style="margin-top: 1em;">If those categories don't map onto how people from different cultures actually experience and express emotion...</p>
 
-                <p style="font-size: 1.3em; color: #e74c3c; margin-top: 0.5em;"><strong>...that theory is wrong.</strong></p>
+                <p class="fragment" style="font-size: 1.2em; color: #e74c3c; margin-top: 0.5em;"><strong>...these systems are biased by design.</strong></p>
             </section>
 
             <section>
@@ -473,10 +494,10 @@
                 <p style="margin-top: 1em;"><strong>Example: Asch Conformity Effect</strong></p>
                 <ul>
                     <li><cite key="bond1996">Bond & Smith, 1996</cite>: Meta-analysis of 133 studies across 17 countries</li>
-                    <li><strong class="green">Found conformity effect everywhere</strong></li>
-                    <li>But: effect <em>size</em> varied (higher in collectivist cultures)</li>
+                    <li class="fragment"><strong class="green">Found conformity effect everywhere</strong></li>
+                    <li class="fragment">But: effect <em>size</em> varied (higher in collectivist cultures)</li>
                 </ul>
-                <p style="margin-top: 1em;"><em>Generalisation &ne; identical effects. Direction can generalise even when magnitude varies.</em></p>
+                <p class="fragment" style="margin-top: 1em;"><em>Generalisation &ne; identical effects.</em></p>
             </section>
 
             <section>
@@ -495,43 +516,42 @@
                 <h2>Temporal Generalisation</h2>
                 <p><strong>Psychology studies a moving target.</strong></p>
                 <ul>
-                    <li>Conformity declining since 1950s (<cite key="bond1996">Bond & Smith, 1996</cite>)</li>
-                    <li>Social attitudes shifting</li>
-                    <li>Technology changing social behaviour</li>
+                    <li class="fragment">Conformity declining since 1950s (<cite key="bond1996">Bond & Smith, 1996</cite>)</li>
+                    <li class="fragment">Social attitudes shifting</li>
+                    <li class="fragment">Technology changing social behaviour</li>
                 </ul>
 
-                <p style="margin-top: 1.5em;">A finding from 1970 might not replicate in 2025 &mdash; not because it was flawed, but because <strong>society changed</strong>.</p>
+                <p class="fragment" style="margin-top: 1.5em;">A finding from 1970 might not replicate in 2025 &mdash; not because it was flawed, but because <strong>society changed</strong>.</p>
             </section>
 
             <section>
                 <h2>Replicating Findings Over Time</h2>
-                <div class="two-column" style="margin-bottom: 2em;">
-                    <div>
-                        <img src="images/replication-plot-1.png" alt="Sequential Indirect Effect Across ALLBUS Waves" style="max-height: 350px;">
-                        <p class="small"></p>
+                <p><strong>Example:</strong> Testing whether anomie leads to authoritarianism via perceived lack of control <cite key="neerdaels2024"></cite></p>
+                <div class="two-column fragment" style="margin-bottom: 1em;">
+                    <div style="text-align: center;">
+                        <img src="images/replication-plot-1.png" alt="Sequential Indirect Effect Across ALLBUS Waves" style="max-height: 320px;">
                     </div>
-                    <div>
-                        <p><strong>Example:</strong> Testing whether anomie leads to authoritarianism via perceived lack of control <cite key="neerdaels2024"></cite></p>
+                    <div class="fragment">
                         <p style="margin-top: 0.5em;">Paper showed effect in 2006. My replication suggests <strong class="red">decline over time</strong>.</p>
                         <p style="margin-top: 0.5em;"><em>Same measures, same analysis &mdash; different era, different result.</em></p>
                     </div>
                 </div>
-                <p class="footnote">Large-scale repeated surveys (World Values Survey, General Social Survey, European Social Survey) enable this kind of temporal replication.</p>
+                <p class="footnote fragment">Large-scale repeated surveys (World Values Survey, General Social Survey, European Social Survey) enable this kind of temporal replication.</p>
             </section>
 
             <section>
                 <h2>See also Project Implicit</h2>
+                <p class="small fragment" style="margin-top: 0.5em;">Data from millions of participants since 2007 (my reanalysis).</p>
                 <div class="two-column">
-                    <div style="text-align: center;">
+                    <div style="text-align: center;" class="fragment">
                         <p class="small"><strong>Implicit bias (IAT)</strong></p>
                         <img src="images/implicit.png" alt="Project Implicit - Implicit bias trends over time" style="max-height: 400px;">
                     </div>
-                    <div style="text-align: center;">
+                    <div style="text-align: center;" class="fragment">
                         <p class="small"><strong>Explicit bias</strong></p>
                         <img src="images/explicit.png" alt="Project Implicit - Explicit bias trends over time" style="max-height: 400px;">
                     </div>
                 </div>
-                <p class="small" style="margin-top: 0.5em;">Data from millions of participants since 2007 (my reanalysis).</p>
             </section>
 
             <section class="discussion-slide">
@@ -556,6 +576,17 @@
                 <p style="margin-top: 2em;">Back at <input type="text" style="font-size: 1em; width: 5em; text-align: center; border: 2px solid rgba(255,255,255,0.5); border-radius: 4px; background: rgba(255,255,255,0.2); color: white; padding: 0.2em;" placeholder="time"></p>
             </section>
 
+            <section class="poll-slide">
+                <h3>Questions &amp; Reactions</h3>
+                <p style="font-size: 1.2em; text-align: center; margin-top: 0.5em;">Share any questions or thoughts so far</p>
+                <div style="text-align: center; margin-top: 1em;">
+                    <img src="images/mentimeter_qr_code.png" alt="Scan to participate" style="max-height: 300px;">
+                </div>
+            </section>
+
+            <section data-background-iframe="https://www.mentimeter.com/app/presentation/al6iqymx2fhzuz8h4dvsahjokzzakdi6/embed" data-background-interactive>
+            </section>
+
             <!-- ============ SEGMENT 4: APPLICABILITY ============ -->
 
             <section class="center">
@@ -572,13 +603,12 @@
                     </div>
                     <div>
                         <p><strong>Jesse Singal (2021)</strong></p>
+                        <p style="margin-top: 0.5em;" class="small"><em>"There's a fundamental mismatch between psychology's current capabilities and what it's being asked to deliver."</em></p>
                         <ul>
-                            <li>Psychology is often oversold to policymakers</li>
-                            <li>Lab effects rarely survive real-world complexity</li>
-                            <li>Interventions scaled without adequate testing</li>
-                            <li>Commercial interests distort science communication</li>
+                            <li class="fragment">Lab effects rarely survive real-world complexity</li>
+                            <li class="fragment">Interventions scaled without adequate testing</li>
+                            <li class="fragment">Commercial interests distort science communication</li>
                         </ul>
-                        <p style="margin-top: 1em;" class="small"><em>"There's a fundamental mismatch between psychology's current capabilities and what it's being asked to deliver."</em></p>
                     </div>
                 </div>
             </section>
@@ -589,18 +619,18 @@
                     <li>&bull; <strong class="blue">Replicate</strong> perfectly</li>
                     <li>&bull; <strong>Generalise</strong> across cultures</li>
                 </ul>
-                <p style="font-size: 1.3em; margin-top: 1em;">AND still <strong class="red">not predict anything in the real world</strong>.</p>
+                <p class="fragment" style="font-size: 1.3em; margin-top: 1em;">AND still <strong class="red">not predict anything in the real world</strong>.</p>
             </section>
 
             <section>
                 <h2>The Attitude-Behaviour Gap</h2>
                 <p><strong>LaPiere (1934):</strong></p>
-                <p>Restaurant owners said they wouldn't serve Chinese guests.<br>
-                Then served them when they arrived.</p>
+                <p class="fragment">Restaurant owners said they wouldn't serve Chinese guests.</p>
+                <p class="fragment">Then served them when they arrived.</p>
 
-                <p style="font-size: 1.3em; margin-top: 1.5em; text-align: center;"><strong>Attitudes &ne; Behaviour</strong></p>
+                <p class="fragment" style="font-size: 1.3em; margin-top: 1.5em; text-align: center;"><strong>Attitudes &ne; Behaviour</strong></p>
 
-                <p style="margin-top: 1em; color: #e67e22; font-weight: bold;">Opposite patterns today?</p>
+                <p class="fragment" style="margin-top: 1em; color: #e67e22; font-weight: bold;">Opposite patterns today?</p>
 
                 <p style="margin-top: 0.5em; color: #666;"><em>(You know this from Week 4)</em></p>
             </section>
@@ -613,11 +643,11 @@
                 <p style="margin-top: 1em;"><strong><cite key="pettigrew2006">Pettigrew & Tropp, 2006</cite> meta-analysis (515 studies):</strong><br>
                 <em>r</em> = -.21 (real, replicable <em>association</em>)</p>
 
-                <p style="margin-top: 1em;"><strong>But real-world evidence is more mixed:</strong></p>
+                <p class="fragment" style="margin-top: 1em;"><strong>But real-world evidence is more mixed:</strong></p>
                 <ul class="small">
-                    <li><strong>Positive example:</strong> <cite key="mousa2020">Mousa, 2020</cite> &mdash; Christian-Muslim soccer teams in Iraq</li>
-                    <li><strong>Rigorous experiments:</strong> <cite key="paluck2019">Paluck et al., 2019</cite> meta-analysis of field experiments: <em>r</em> = .19 (<em>but</em> with PAP: <em>r</em> = .01)</li>
-                    <li><strong>Preregistered studies:</strong> <cite key="lowe2025">Lowe, 2025</cite> &mdash; meta-analysis of 41 preregistered experiments found <em>r</em> &asymp; .05 (much smaller)</li>
+                    <li class="fragment"><strong>Positive example:</strong> <cite key="mousa2020">Mousa, 2020</cite> &mdash; Christian-Muslim soccer teams in Iraq</li>
+                    <li class="fragment"><strong>Rigorous experiments:</strong> <cite key="paluck2019">Paluck et al., 2019</cite> meta-analysis of field experiments: <em>r</em> = .19 (<em>but</em> with PAP: <em>r</em> = .01)</li>
+                    <li class="fragment"><strong>Preregistered studies:</strong> <cite key="lowe2025">Lowe, 2025</cite> &mdash; meta-analysis of 41 preregistered experiments found <em>r</em> &asymp; .05 (much smaller)</li>
                 </ul>
             </section>
 
@@ -625,7 +655,7 @@
                 <h2>Why Contact Doesn't Always Translate</h2>
                 <p><cite key="paluck2021">Paluck et al., 2021</cite> (Annual Review):</p>
                 <div class="two-column" style="margin-top: 0.5em;">
-                    <div class="solution-list">
+                    <div class="solution-list fragment">
                         <p><strong>In labs:</strong></p>
                         <ul>
                             <li>Controlled motivation</li>
@@ -633,7 +663,7 @@
                             <li>Cooperative interdependence</li>
                         </ul>
                     </div>
-                    <div class="problem-list">
+                    <div class="problem-list fragment">
                         <p><strong>In real-world programmes:</strong></p>
                         <ul>
                             <li>Motivation varies</li>
@@ -642,7 +672,7 @@
                         </ul>
                     </div>
                 </div>
-                <p style="margin-top: 0.5em;"><em>The <strong>moderators</strong> that make contact work are hard to engineer at scale.</em></p>
+                <p class="fragment" style="margin-top: 0.5em;"><em>The <strong>moderators</strong> that make contact work are hard to engineer at scale.</em></p>
                 <aside class="notes">
                     Additional challenges from Paluck et al. 2021:
                     - Lab studies often don't translate to lasting attitude change
@@ -665,7 +695,7 @@
                         <img src="images/sun_moon.png" alt="Children from Sun (yellow) and Moon (blue) planets" style="max-height: 220px;">
                     </div>
                 </div>
-                <p style="margin-top: 0.5em; color: #e74c3c; text-align: center;"><strong>How much can we learn about real intergroup relations from aliens?</strong></p>
+                <p class="fragment" style="margin-top: 0.5em; color: #e74c3c; text-align: center;"><strong>How much can we learn about real intergroup relations from aliens?</strong></p>
                 <aside class="notes">
                     Vezzali et al. 2015 method: Children were randomly allocated to experimental conditions after being placed in same-sex groups of 3-6 children. The task was to create a story where children cooperated to survive in a hypothetical situation.
 
@@ -681,10 +711,10 @@
                 <h2>Why Lab Findings Shrink</h2>
                 <p>Four reasons:</p>
                 <ol>
-                    <li style="background: #fff3cd; padding: 0.3em 0.5em; border-radius: 4px; margin-bottom: 0.3em;"><strong class="red">Competing influences</strong> &mdash; One signal in a noisy environment</li>
-                    <li><strong>Demand characteristics</strong> &mdash; People know they're studied</li>
-                    <li><strong>Duration</strong> &mdash; Lab measures immediate effects; life unfolds over time</li>
-                    <li><strong>Implementation is hard</strong> &mdash; Scaling requires fidelity, training, resources</li>
+                    <li class="fragment"><strong>Demand characteristics</strong> &mdash; People know they're studied</li>
+                    <li class="fragment"><strong>Duration</strong> &mdash; Lab measures immediate effects; life unfolds over time</li>
+                    <li class="fragment"><strong>Implementation is hard</strong> &mdash; Scaling requires fidelity, training, resources</li>
+                    <li class="fragment"> <strong>Competing influences</strong> &mdash; One signal in a noisy environment</li>
                 </ol>
             </section>
 
@@ -762,7 +792,7 @@
                 <table style="font-size: 0.85em;">
                     <tr><th>Critical Question</th><th>Failure Mode</th></tr>
                     <tr><td>Was it replicated?</td><td><span style="background: #e74c3c; color: white; padding: 0.15em 0.4em; border-radius: 3px; display: inline-block; width: 11em; text-align: center;">🔴 Not replicable</span></td></tr>
-                    <tr><td>Is the outcome measured that which matters?</td><td><span style="background: #e67e22; color: white; padding: 0.15em 0.4em; border-radius: 3px; display: inline-block; width: 11em; text-align: center;">🟠 Proxy ≠ target</span></td></tr>
+                    <tr><td>Is the outcome <em>measured</em> that which <em>matters?</em></td><td><span style="background: #e67e22; color: white; padding: 0.15em 0.4em; border-radius: 3px; display: inline-block; width: 11em; text-align: center;">🟠 Proxy ≠ target</span></td></tr>
                     <tr><td>In what population/context?</td><td><span style="background: #f1c40f; color: #333; padding: 0.15em 0.4em; border-radius: 3px; display: inline-block; width: 11em; text-align: center;">🟡 Boundary conditions</span></td></tr>
                     <tr><td>How large is the effect?</td><td><span style="background: #3498db; color: white; padding: 0.15em 0.4em; border-radius: 3px; display: inline-block; width: 11em; text-align: center;">🔵 Trivially small</span></td></tr>
                 </table>
@@ -771,10 +801,10 @@
             <section>
                 <h2>What Makes Findings More Applicable?</h2>
                 <ul>
-                    <li><strong class="green">Field experiments</strong> &mdash; Real behaviour, natural settings</li>
-                    <li><strong class="green">Longitudinal designs</strong> &mdash; Track effects over time</li>
-                    <li><strong class="green">Replication in applied settings</strong> &mdash; Not just more labs</li>
-                    <li><strong class="green">Intervention testing</strong> &mdash; Actually implement, measure outcomes</li>
+                    <li class="fragment"><strong class="green">Field experiments</strong> &mdash; Real behaviour, natural settings</li>
+                    <li class="fragment"><strong class="green">Longitudinal designs</strong> &mdash; Track effects over time</li>
+                    <li class="fragment"><strong class="green">Replication in applied settings</strong> &mdash; Not just more labs</li>
+                    <li class="fragment"><strong class="green">Intervention testing</strong> &mdash; Actually implement (ideally by practitioners), measure outcomes</li>
                 </ul>
             </section>
 
@@ -803,13 +833,13 @@
                 <p>When reading a paper, be concerned if you see:</p>
                 <ul class="problem-list">
                     <li><strong>Small sample, no power analysis</strong> (N < 50 per cell)</li>
-                    <li><strong>Effect sizes too good</strong> (d > 0.8 is rare; d > 1.0 is very rare)
+                    <li class="fragment"><strong>Effect sizes too good</strong> (d > 0.8 is rare; d > 1.0 is very rare)
                         <br><span class="small">Reference: male/female height difference is d &asymp; 1.8</span></li>
-                    <li><strong>No preregistration</strong> for confirmatory claims (especially if many DVs)</li>
-                    <li><strong>"Conceptual replications only"</strong> &mdash; never same operationalisation</li>
-                    <li><strong>p-values cluster just under .05</strong> (.048, .043, .049...)</li>
-                    <li><strong>Covariates appear/disappear</strong> across analyses</li>
-                    <li><strong>Multiple DVs, selective reporting</strong></li>
+                    <li class="fragment"><strong>Multiple measures, selective reporting</strong></li>
+                    <li class="fragment"><strong>No preregistration</strong> for confirmatory claims (in new papers)</li>
+                    <li class="fragment"><strong>"Conceptual replications only"</strong> &mdash; never same operationalisation</li>
+                    <li class="fragment"><strong>p-values cluster just under .05</strong> (.048, .043, .049...)</li>
+                    <li class="fragment"><strong>Covariates appear/disappear</strong> across analyses</li>
                 </ul>
             </section>
 
@@ -835,12 +865,12 @@
                 <p>More confidence if you see:</p>
                 <ul class="solution-list">
                     <li><strong>Preregistration badge or statement with link</strong></li>
-                    <li><strong>Open data badge or statement with link</strong></li>
-                    <li><strong>Power analysis with justification</strong></li>
-                    <li><strong>Effect sizes consistent with meta-analyses</strong></li>
-                    <li><strong>Replication across studies/contexts</strong></li>
-                    <li><strong>Transparent limitations section</strong></li>
-                    <li><strong>Distinguishes exploratory from confirmatory</strong></li>
+                    <li class="fragment"><strong>Open data badge or statement with link</strong></li>
+                    <li class="fragment"><strong>Power analysis with justification</strong></li>
+                    <li class="fragment"><strong>Effect sizes consistent with meta-analyses</strong></li>
+                    <li class="fragment"><strong>Direct/motivated replication across studies/contexts</strong></li>
+                    <li class="fragment"><strong>Transparent limitations section</strong></li>
+                    <li class="fragment"><strong>Distinguishes exploratory from confirmatory</strong></li>
                 </ul>
             </section>
 
@@ -960,27 +990,27 @@
 
             <section>
                 <h2>Registered Reports: The New Gold Standard</h2>
-                <p class="small" style="color: #666;"><em>(Recap: we introduced this earlier &mdash; key solution worth emphasising)</em></p>
+                <p class="small" style="color: #666;"><em>(Recap: we saw this earlier &mdash; key solution worth emphasising)</em></p>
                 <p><strong>Addresses multiple problems:</strong></p>
                 <ul class="solution-list" style="list-style: none;">
                     <li>&check; Greatly reduces publication bias</li>
-                    <li>&check; Reduces analytic flexibility for confirmatory tests</li>
-                    <li>&check; Improves power (reviewers check)</li>
-                    <li>&check; Works for field studies too</li>
+                    <li class="fragment">&check; Reduces analytic flexibility for confirmatory tests</li>
+                    <li class="fragment">&check; Improves design (reviewers check)</li>
+                    <li class="fragment">&check; Works for field studies too</li>
                 </ul>
-                <p style="margin-top: 1em;"><strong>Over 300 journals</strong> use the Registered Reports format.</p>
+                <p style="margin-top: 1em;"><strong>Over 300 journals</strong> offer the Registered Reports format.</p>
             </section>
 
             <section>
                 <h2>As Consumers &mdash; Reading Research</h2>
                 <p>When reading papers, look for:</p>
                 <ul>
-                    <li><strong>Preregistration statement or badge</strong> (usually in methods)</li>
-                    <li><strong>Open data statement or badge</strong></li>
-                    <li><strong>Effect sizes and uncertainty</strong> (not just p-values)</li>
-                    <li><strong>Sample description</strong> (who, how many, from where)</li>
-                    <li><strong>Does the sample match the population of interest?</strong> (generalisation)</li>
-                    <li><strong>Does the conclusion match the evidence?</strong></li>
+                    <li class="fragment"><strong>Preregistration statement or badge</strong></li>
+                    <li class="fragment"><strong>Open data statement or badge</strong></li>
+                    <li class="fragment"><strong>Effect sizes and uncertainty</strong> (not just p-values)</li>
+                    <li class="fragment"><strong>Sample description</strong> (who, how many, from where)</li>
+                    <li class="fragment"><strong>Does the sample match the population of interest?</strong> (generalisation)</li>
+                    <li class="fragment"><strong>Does the conclusion match the evidence?</strong></li>
                 </ul>
             </section>
 
@@ -988,11 +1018,11 @@
                 <h2>As Producers &mdash; Your Dissertation</h2>
                 <p>You can adopt these practices now:</p>
                 <ul>
-                    <li><strong class="green">Preregister</strong> your hypotheses (AsPredicted.org &mdash; 10 minutes)</li>
-                    <li><strong class="green">Justify sample size</strong> before collecting data (and only ask questions you can answer)</li>
-                    <li><strong class="green">Share your data</strong> (ethics permitting)</li>
-                    <li><strong class="green">Report effect sizes</strong> and confidence intervals</li>
-                    <li><strong class="green">Distinguish</strong> exploratory from confirmatory</li>
+                    <li class="fragment"><strong class="green">Preregister</strong> your hypotheses (AsPredicted.org &mdash; 10 minutes)</li>
+                    <li class="fragment"><strong class="green">Justify sample size</strong> before collecting data (and only ask questions you can answer)</li>
+                    <li class="fragment"><strong class="green">Share your data</strong> (ethics permitting)</li>
+                    <li class="fragment"><strong class="green">Report effect sizes</strong> and confidence intervals</li>
+                    <li class="fragment"><strong class="green">Distinguish</strong> exploratory from confirmatory</li>
                 </ul>
             </section>
 
@@ -1028,6 +1058,9 @@
                     <li style="margin-bottom: 1em;">One thing I might do differently when <strong>READING</strong> research:</li>
                     <li>One thing I might do differently when <strong>DOING</strong> research:</li>
                 </ol>
+                <div style="text-align: center; margin-top: 1em;">
+                    <img src="images/mentimeter_qr_code.png" alt="Scan to participate" style="max-height: 200px;">
+                </div>
             </section>
 
             <section data-background-iframe="https://www.mentimeter.com/app/presentation/al6iqymx2fhzuz8h4dvsahjokzzakdi6/embed" data-background-interactive>
@@ -1035,8 +1068,8 @@
 
             <section class="center">
                 <p style="font-size: 1.1em;">The crisis revealed real problems.</p>
-                <p style="font-size: 1.1em; margin-top: 0.5em;">It also created real solutions &mdash; and evidence suggests they're working (<cite key="korbmacher2023"></cite>).</p>
-                <p style="font-size: 1.3em; margin-top: 1.5em; color: #2c3e50;"><strong>Let's use and produce evidence with care &mdash; so that our science deserves trust.</strong></p>
+                <p class="fragment" style="font-size: 1.1em; margin-top: 0.5em;">It also created real solutions &mdash; and evidence suggests they're working (<cite key="korbmacher2023"></cite>).</p>
+                <p class="fragment" style="font-size: 1.3em; margin-top: 1.5em; color: #2c3e50;"><strong>Let's use and produce evidence with care &mdash; so that our science deserves trust.</strong></p>
             </section>
 
             <section class="center" data-background-image="images/background.jpg" data-state="show-cc">
@@ -1071,7 +1104,7 @@
             width: 1280,
             height: 720,
             margin: 0.1,
-        });
+        }, true);
 
         // Show CC logo on specific slides
         const ccLogo = document.getElementById('cc-logo');
@@ -1080,6 +1113,28 @@
         }
         Reveal.on('slidechanged', event => updateCCLogo(event.currentSlide));
         Reveal.on('ready', event => updateCCLogo(event.currentSlide));
+
+        // Click-to-zoom for images
+        document.querySelector('.reveal').addEventListener('click', function(e) {
+            const img = e.target.closest('img:not(#cc-logo)');
+            if (!img || document.querySelector('.img-zoom-overlay')) return;
+            e.preventDefault();
+            e.stopPropagation();
+            const overlay = document.createElement('div');
+            overlay.className = 'img-zoom-overlay';
+            const zoomed = document.createElement('img');
+            zoomed.src = img.src;
+            zoomed.alt = img.alt;
+            overlay.appendChild(zoomed);
+            document.body.appendChild(overlay);
+            overlay.addEventListener('click', function(ev) { ev.stopPropagation(); overlay.remove(); });
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const overlay = document.querySelector('.img-zoom-overlay');
+                if (overlay) { e.stopImmediatePropagation(); overlay.remove(); }
+            }
+        }, true);
     </script>
 </body>
 </html>
